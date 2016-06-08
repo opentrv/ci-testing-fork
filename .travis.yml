@@ -16,7 +16,7 @@ install:
   - ln -s $PWD /usr/local/share/arduino/libraries/
   - arduino --install-boards "opentrv:avr"
   - arduino --pref "boardsmanager.additional.urls=" --save-prefs
-  - arduino --install-library ""
+  - arduino --install-library "OTRadioLink,OTAESGCM"
 script:
   - arduino --verify --board opentrv:avr:opentrv_v0p2 $PWD/ --verbose-build
 notifications:
