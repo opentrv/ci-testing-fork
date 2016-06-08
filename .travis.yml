@@ -15,6 +15,7 @@ install:
   - ln -s $PWD /usr/local/share/arduino/libraries/
   - arduino --install-board "opentrv:avr:opentrv_v0p2"
   - arduino --install-library ""
+  - export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/
 script:
   - arduino --verify --board opentrv:avr:opentrv_v0p2 $PWD/
 notifications:
