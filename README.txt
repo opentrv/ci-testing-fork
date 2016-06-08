@@ -1,3 +1,7 @@
+
+=== NOTE: Repo only used for testing CI, do not use for anything else ===
+
+
 This is the OpenTRV (Open-Source Thermostatic Radiator Valve) project.
 
 See http://www.earth.org.uk/open-source-programmable-thermostatic-radiator-valve.html for more.
