@@ -1,6 +1,6 @@
 language: cpp
 before_install:
-  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16 +extension RANDR"
+  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16 -extension RANDR"
   - sleep 3
   - export DISPLAY=:1.0
   - wget http://downloads.arduino.cc/arduino-1.6.8-linux64.tar.xz
@@ -13,11 +13,11 @@ before_install:
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 install:
   - ln -s $PWD /usr/local/share/arduino/libraries/
-  - arduino --install-board "opentrv:avr:opentrv_v0p2"
+  - arduino --install-boards "opentrv:avr:opentrv_v0p2"
   - arduino --pref "boardsmanager.additional.urls=" --save-prefs
   - arduino --install-library ""
 script:
-  - arduino --verify --board opentrv:avr:opentrv_v0p2 $PWD/
+  - arduino --verify --board opentrv:avr:opentrv_v0p2 $PWD/ --verbose-build
 notifications:
   email:
     on_success: change
