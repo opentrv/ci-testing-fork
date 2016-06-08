@@ -12,6 +12,7 @@ before_install:
   - sudo mv arduino-1.6.5 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 install:
+  - arduino --pref "boardsmanager.additional.urls=https://raw.githubusercontent.com/opentrv/OpenTRV-Config/master/Arduino/package_opentrv_index.json" --save-prefs
   - ln -s $PWD /usr/local/share/arduino/libraries/
   - arduino --install-boards "opentrv:avr"
   - arduino --pref "boardsmanager.additional.urls=" --save-prefs
