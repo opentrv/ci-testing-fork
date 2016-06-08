@@ -7,15 +7,12 @@ before_install:
   - wget https://github.com/opentrv/OTRadioLink/archive/master.zip
   - wget https://github.com/opentrv/OTAESGCM/archive/master.zip
   - tar xf arduino-1.6.8-linux64.tar.xz
-  - mkdir libraries
-  - cd libraries
-  - unzip ../master.zip
-  - unzip ../master.zip.1
-  - cd ..
+  - unzip master.zip
+  - unzip master.zip.1
   - sudo mv arduino-1.6.8 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 install:
-  - ln -s $PWD/libraries /usr/local/share/arduino/libraries/
+  - ln -s $PWD /usr/local/share/arduino/libraries/
   - arduino --install-boards "opentrv:avr"
   - arduino --pref "boardsmanager.additional.urls=" --save-prefs
   - arduino --install-library ""
